@@ -319,7 +319,7 @@ body{
     left:0;
 }
 .sprite-ventas, .sprite-operaciones, .sprite-herramientas{
-    background-image: url(/genkopos/images/apps_families_s.png);
+    background-image: url(/images/apps_families_s.png);
     background-repeat: no-repeat;
     background-size: auto;
     width: 60px;
