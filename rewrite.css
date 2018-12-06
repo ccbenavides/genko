@@ -21,7 +21,7 @@ b,strong{
 }
 
 b,p,span,td,a, input{
-    font-size: 1rem;
+    font-size: .95rem;
 }
 body{
     background: #f1f2f3;
@@ -334,4 +334,41 @@ body{
 }
 .sprite-herramientas{
     background-position: -179px 0;
+}
+.acordeon-input{
+    visibility: hidden;
+    position: absolute;
+    
+}
+.acordeon-input:checked + .acordeon > .acordeon-title{
+    background: linear-gradient(to right, #51139f, #772996, #9a3b8c) !important;
+}
+
+.acordeon-input:checked + .acordeon > .acordeon-text{
+    display: block;
+}
+
+.acordeon-title{
+    padding: 12px 27px 12px 27px; 
+    display:flex;
+    background : #322052;
+    justify-content: space-between;
+    align-items: center;   
+    border-radius: 25px 5px 5px 5px;
+}
+.acordeon{
+    width: 380px;
+   
+}
+
+.minus{
+    height: 1px;
+    background: #fff;
+    width: 14px; 
+}
+
+.acordeon-text{
+    padding: 15px 30px 15px 30px;
+    display:none;
+
 }
