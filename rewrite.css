@@ -38,11 +38,16 @@ body{
     width: 100%;
     position: relative;
     overflow: hidden;
-    max-width: 1700px;
+    max-width: 1900px;
     margin: 0 auto;
     background-color :#fff;
 }
 .absolute{
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+}
+.absolute-w{
     position: absolute;
     width: 100%;
     z-index: 0;
@@ -57,7 +62,7 @@ body{
 
 }
 .master_max{
-    max-width: 1150px;
+    width: 1150px;
     margin: 0 auto;
     z-index: 1;
     position: relative;
@@ -217,6 +222,10 @@ body{
     background: -webkit-linear-gradient(to right, #51139f, #772996, #9a3b8c);
     background: linear-gradient(to right, #51139f, #772996, #9a3b8c); 
 }
+.btn-contact.rw{
+    min-width: initial;
+    width: 100%;
+}
 .btn-factura{
     color: #6737ab;
     border: 3px solid;
@@ -349,7 +358,7 @@ body{
 }
 
 .acordeon-title{
-    padding: 12px 27px 12px 27px; 
+    padding: 15px 27px 15px 27px; 
     display:flex;
     background : #322052;
     justify-content: space-between;
@@ -357,7 +366,7 @@ body{
     border-radius: 25px 5px 5px 5px;
 }
 .acordeon{
-    width: 380px;
+    width: 410px;
    
 }
 
@@ -370,5 +379,5 @@ body{
 .acordeon-text{
     padding: 15px 30px 15px 30px;
     display:none;
-
+    transition: 1s;
 }
