@@ -306,7 +306,7 @@ body{
 .aplicaciones-link{
     color: #111;
     display: inline-block;
-    padding: 15px 10px 15px 60px;
+    padding: 20px 15px 22px 68px;
     border-radius: 25px 3px 3px 3px;
     position: relative;
 }
@@ -335,8 +335,25 @@ body{
     height: 50px;
     margin-top: 2px;
 }
+.bg-gray{
+    background: #f2f0f0
+}
+.bg-facturacion{
+    background: rgba(108, 35, 152,.9);
+    background-image: url(./images/home_bg_call_to_action.png);
+}
+.bg-genkopos{
+    background-image:url(./images/home_bg_acordion.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
+    
+}
 .sprite-ventas{
     background-position: -58px 0;
+    margin-top: 8px;
+    margin-left: 9px;
 }
 .sprite-operaciones{
     background-position:-114px 0;
@@ -380,4 +397,28 @@ body{
     padding: 15px 30px 15px 30px;
     display:none;
     transition: 1s;
+}
+.tipo-letra{
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 400;
+   
+}
+.title-roboto{
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -1.9px;
+}
+.color-azul{
+    color: #322052;
+}
+.otra-letra{
+    font-family: 'Poppins', sans-serif;
+}
+.title-roboto-rw{
+    font-size: 32px;
+    letter-spacing: 1.1px;
+}
+.max-500{
+    width: 500px;
+    margin: 0 auto;
 }
