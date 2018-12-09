@@ -44,8 +44,13 @@ body{
 }
 .absolute{
     position: absolute;
-    height: 100%;
+    height: 100%;    
     z-index: 0;
+}
+.absolute-center{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 .absolute-w{
     position: absolute;
@@ -294,7 +299,7 @@ body{
     transform: translateY(10px)
 }
 .main-view{
-    min-height: 600px;
+    min-height: 750px;
     display:flex;
     align-items:center;
     color: #fff;
@@ -406,7 +411,7 @@ body{
 .title-roboto{
     font-weight: 700;
     font-size: 28px;
-    letter-spacing: -1.9px;
+    letter-spacing: -1px;
 }
 .color-azul{
     color: #322052;
