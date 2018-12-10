@@ -30,6 +30,23 @@
         .info-space{
             padding-left: 30px;
         }
+        .dark-bg{
+            background : rgba(0,0,0,.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            height: 100%;
+            display:none;
+        }
+        .dark-bg.on{
+            display:block;
+
+        }
+        .close-menu{
+            display:none;
+        }
         @media only screen and (max-width: 1200px) {
             .form-control-contact{
                 padding: 22px 20px;
@@ -44,44 +61,142 @@
         @media only screen and (max-width: 1003px) {
             .absolute-1050{
                 width: initial;
-                height: 100%;
             }
-            .big-size{
-                font-size: 40px;
-            }
+
             .padding-space{
                 padding-top: 50px ;
                 padding-bottom: 50px ;
             }
+            p{ font-size: .85rem; }
+            .logo-responsive{
+                width: 200px;
+            }
+            
+            .width-250{
+                width: 250px;
+            }
+            .main-menu__item{
+                font-size: 12px !important;
+            }
         }
-
+        @media only screen and (max-width: 991px){
+            .footer-banner{
+                text-align: center;
+            }
+            .title-info-lg{
+                padding-bottom: .5rem!important;
+                padding-top: 1.5rem;
+            }
+            .max-width-lg{
+                max-width: 350px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .big-size{
+                font-size: 40px;
+            }
+        }
         @media only screen and (max-width: 900px) {
             .info-space{
                 padding-left: 0;
             }
+            
+        }
+        @media only screen and (max-width: 800px) {
+            .main-menu{
+                display: initial;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 300px;
+                background: #fff;
+                height: 100%;
+                z-index: 9;
+                box-shadow: 1px 2px 3px #b7b7b7;
+                overflow: auto;
+                transition: 1s;
+                transform: translateX(100%);
+            }
+            .main-menu.on{
+                transform: translateX(0);
+
+            }
+            .main-menu li{
+                padding-left: 30px;
+
+            }
+            .main-menu__item{
+                padding: 10px 5px 15px 5px;
+            }
+            .btn-demo{
+                width: 200px;
+                margin-top:20px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+            .main-menu__item:hover:before, .main-menu__active:before{
+                height: 0;
+            }
+            .hamburger{
+                display:block;
+            }
+            .close-menu{
+                display:block;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                background: #36114c;
+                color: #FFF;
+            }
+            .close-menu-title{
+                margin-left: 10px;
+                font-size: 15px;
+            }
+            .translate-logo{
+                transform: translateY(0); 
+            }
+            .master_full_top{
+                height: 60px;
+                position: fixed;
+                top: 0;
+                z-index: 3;
+                background: #fff;
+                border-bottom: 1px solid #ddd;
+            }
+            body{
+                padding-top: 60px;
+            }
+            .iconos-info{
+                text-align: center;
+            }
         }
         @media only screen and (max-width: 768px) {
             .master_max{ min-width: 350px;}
-            p{ font-size: .85rem; }
+            
             .info-bt{padding-bottom: 30px;}
             .rights-foot{ text-align: center; }
             .enlaces-foot{ text-align: center !important;margin-bottom: 10px; }
         }
     </style>
 </head>
-<body>
+<body id='body'>
     <!-- CABEZERA -->
-    <section style="background: red;color:#fff;padding: 10px 0 5px 0;" class='master_full'>
-        <h6 class='text-center'>Revisa las imagenes que faltan y dime los detalles para verlo en la noche</h6>
-    </section>
-    <section class='master_full' >
+    <section class='dark-bg' id='darkBg' onclick='handleClear()'></section> 
+    <section class='master_full_top' >
         <section class='master_max'>
-            <header class='header d-flex flex-wrap align-items-end'>
+            <header class='header d-flex flex-wrap align-items-end justify-content-between'>
                 <div>
-                    <img src="./images/logo_genko_pos.png"  class='translate-logo' alt="logo">
+                    <img src="./images/logo_genko_pos.png"  class='translate-logo width-250' alt="logo">
                 </div>
                 <nav class='d-flex justify-content-between align-items-center'>
-                    <ul class='nav nav-pills main-menu align-items-center'>
+                    <ul class='nav nav-pills main-menu align-items-center' id='mainMenu'>
+                        <li class='close-menu' onclick='handleClear()'>
+                            <div>
+                                <svg id="i-close" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path d="M2 30 L30 2 M30 30 L2 2"></path>
+                                </svg>
+                                <span class='close-menu-title'>MENU</span>
+                            </div>
+                        </li>
                         <li><a class='main-menu__item' href="./index.html">INICIO</a></li>
                         <li><a class='main-menu__item' href="#">NOSOTROS</a></li>
                         <li><a class='main-menu__item' href="#">APLICACIONES</a></li>
@@ -90,6 +205,11 @@
                         <li><a href="#" class='btn btn-demo ml-2'>DEMO</a></li>
                     </ul>
                     <div>
+                        <div class='hamburger' id='hamburger' onclick='handleMenu(event)'>
+                            <svg id="i-menu" viewBox="0 0 32 32" width="30px" height="30px" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path>
+                            </svg>
+                        </div>
                     </div>
                     <div>                  
                             <div data-icon="ei-search"></div>
@@ -175,11 +295,13 @@
                             </div>
                         </div>
                         <h5 class='pt-4 pb-2'>Síguenos en:</h5>
-                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-google-plus" aria-hidden="true"></i></div>
-                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
-                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <div class='iconos-info'>
+                            <div class='icon-footer icon-footer-contacto'><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class='icon-footer icon-footer-contacto'><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class='icon-footer icon-footer-contacto'><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+                            <div class='icon-footer icon-footer-contacto'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
+                            <div class='icon-footer icon-footer-contacto'><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -221,8 +343,8 @@
     <section class='master_full padding-space-50 footer-banner'>
             <section class='master_max'>
                 <div class="row">
-                    <div class="col-md-4">
-                        <img src="./images/Logo_genko_pos_footer.png"  class='img-responsive translate-y' alt="">
+                    <div class="col-lg-4">
+                        <img src="./images/Logo_genko_pos_footer.png"  class='img-responsive translate-y logo-responsive' alt="">
                         <p class='white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                         <div class='icon-footer'><i class="fa fa-facebook" aria-hidden="true"></i></div>
                         <div class='icon-footer'><i class="fa fa-twitter" aria-hidden="true"></i></div>
@@ -230,8 +352,8 @@
                         <div class='icon-footer'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
                         <div class='icon-footer'><i class="fa fa-instagram" aria-hidden="true"></i></div>
                     </div>  
-                    <div class="col-md-4">
-                        <h4 class='pb-4 font-weight-normal'style="font-size:larger;">Información de contacto</h4>
+                    <div class="col-lg-4">
+                        <h4 class='pb-4 font-weight-normal title-info-lg'style="font-size:larger;">Información de contacto</h4>
                         <p>
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <b class='pl-3'>Dirección: </b>
@@ -248,9 +370,9 @@
                             <span class="white">elearny@mybussines.com</span>
                         </p>
                     </div>
-                    <div class="col-md-4">
-                        <h4 class='pb-4 font-weight-normal' style="font-size:larger;">Boletín de Noticias</h4>
-                        <form action="#">
+                    <div class="col-lg-4">
+                        <h4 class='pb-4 font-weight-normal title-info-lg' style="font-size:larger;">Boletín de Noticias</h4>
+                        <form action="#" class='max-width-lg'>
                             <div class="form-group">
                                 <input type="text"  placeholder="Nombres" class='form-control form-control-footer'  name='nombres' />
                             </div>
@@ -283,5 +405,6 @@
         </section>
 
     <script src="./fontawesome.min.js"></script>
+    <script src='./rewrite.js'></script>
 </body> 
 </html> 

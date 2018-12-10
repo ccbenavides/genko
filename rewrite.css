@@ -41,6 +41,12 @@ body{
     max-width: 1900px;
     margin: 0 auto;
 }
+.master_full_top{
+    width: 100%;
+    overflow: hidden;
+    max-width: 1900px;
+    margin: 0 auto;
+}
 .absolute{
     position: absolute;
     height: 100%;    
@@ -69,13 +75,19 @@ body{
     width: 1150px;
     margin: 0 auto;
     z-index: 1;
-    position: relative;
 }
-.header > div{
+/*.header > div{
     width: 43%;
 }
 .header > nav{
     width: 57%;
+}*/
+.hamburger{
+    display:none;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #111;
+    cursor: pointer;
 }
 
 .main-menu__item{
