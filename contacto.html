@@ -16,6 +16,57 @@
             padding-right: 10px;
             width: 100%;
         }
+
+        .max-500{
+            max-width: 500px;
+            width: 100%;
+        }
+        .absolute-w{
+            z-index: -1;
+        }
+        .bg-white{
+            background : #fff;
+        }
+        .info-space{
+            padding-left: 30px;
+        }
+        @media only screen and (max-width: 1200px) {
+            .form-control-contact{
+                padding: 22px 20px;
+            }
+            .form-control-contact::placeholder{
+                font-size: 14px;
+            }
+            .nav-pills li,.nav-pills a{
+                font-size: 13px;
+            }
+        }
+        @media only screen and (max-width: 1003px) {
+            .absolute-1050{
+                width: initial;
+                height: 100%;
+            }
+            .big-size{
+                font-size: 40px;
+            }
+            .padding-space{
+                padding-top: 50px ;
+                padding-bottom: 50px ;
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            .info-space{
+                padding-left: 0;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .master_max{ min-width: 350px;}
+            p{ font-size: .85rem; }
+            .info-bt{padding-bottom: 30px;}
+            .rights-foot{ text-align: center; }
+            .enlaces-foot{ text-align: center !important;margin-bottom: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -50,7 +101,7 @@
     </section>
 
     <section class='master_full'>
-        <img src="./images/bg_contacto.png" class='absolute-w' alt="">
+        <img src="./images/bg_contacto.png" class='absolute-w absolute-1050' alt="">
         <section class='master_max pt-5'>
             <h1 class="pt-5 blanco big-size">Contáctenos</h1>
             <div class='line-white mb-4 mt-3'></div>
@@ -69,70 +120,72 @@
         <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6561.055055306068!2d-77.02569377591556!3d-12.096628578455137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDionisio+Derteano%2C+Distrito+de+San+Isidro!5e0!3m2!1ses-419!2spe!4v1543543054831" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
     </section>
     <!-- !INFORMACIÓN DE CONTACTO -->
-    <section class="master_full padding-space">
+    <section class="master_full padding-space bg-white">
         <section class="master_max">
             <h3 class='subttitle'>Información de Contacto</h3>
             <div class='line-purple-left mt-3 mb-5'></div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 info-bt">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptate nam in repellat commodi obcaecati corrupti nisi deleniti qui. Nobis animi culpa excepturi voluptatem reprehenderit dignissimos voluptates labore unde quia.</p>
                     <h5 class='py-3 '>Horario de Atención</h5>
                     <div class="row pb-2">
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                             <b>Lunes a viernes :</b>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-sm-8">
                             <span>09:00 hrs - 17:00 hrs</span>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                             <b>Sábados :</b>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-sm-8">
                             <span>09:00 hrs - 14:00 hrs</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 offset-md-1">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <i class="fa fa-map-marker letter" aria-hidden="true"></i>
-                            <b class='pl-3' >Dirección: </b>
+                <div class="col-md-6">
+                    <section class='info-space'>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <i class="fa fa-map-marker letter" aria-hidden="true"></i>
+                                <b class='pl-2' >Dirección: </b>
+                            </div>
+                            <div class="col-sm-8">
+                                <span>Av Rosales N 130 SI</span>
+                            </div>
                         </div>
-                        <div class="col-md-8">
-                            <span>Av Rosales N 130 SI</span>
+                        <div class="row py-2">
+                            <div class="col-sm-4">
+                                <i class="fa fa-phone letter" aria-hidden="true"></i>
+                                <b class='pl-2'>Teléfono: </b>
+                            </div>
+                            <div class="col-sm-8">
+                                <span>+51 3232-334</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-md-4">
-                            <i class="fa fa-phone letter" aria-hidden="true"></i>
-                            <b class='pl-3'>Teléfono: </b>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <i class="fa fa-envelope-o letter" aria-hidden="true"></i>
+                                <b class='pl-2'>Email: </b>
+                            </div>
+                            <div class="col-sm-8">
+                                <span>ventas@genkopos.com</span>
+                            </div>
                         </div>
-                        <div class="col-md-8">
-                            <span>+51 3232-334</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <i class="fa fa-envelope-o letter" aria-hidden="true"></i>
-                            <b class='pl-3'>Email: </b>
-                        </div>
-                        <div class="col-md-8">
-                            <span>ventas@genkopos.com</span>
-                        </div>
-                    </div>
-                    <h5 class='pt-4 pb-2'>Síguenos en:</h5>
-                    <div class='icon-footer icon-footer-contacto'><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                    <div class='icon-footer icon-footer-contacto'><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <div class='icon-footer icon-footer-contacto'><i class="fa fa-google-plus" aria-hidden="true"></i></div>
-                    <div class='icon-footer icon-footer-contacto'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
-                    <div class='icon-footer icon-footer-contacto'><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <h5 class='pt-4 pb-2'>Síguenos en:</h5>
+                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
+                        <div class='icon-footer icon-footer-contacto'><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    </section>
                 </div>
             </div>
         </section>
     </section>
-
+    <!-- FORMULARIO CONTACTENOS -->
     <section class='master_full bg-gray'>
         <section class='master_max padding-space'>
             <img src="./images/bg_aplicaciones.png"  class='absolute-w' alt="">
@@ -213,12 +266,12 @@
         <section class='master_full bg-purple footer'>
             <section class="master_max">
                 <div class="row">
-                    <div class="col-md-5">
-                        <p class='white'>
+                    <div class="col-md-4">
+                        <p class='white rights-foot'>
                             Copyright 2018 - Genko Pos. Todos los derechos reservados
                         </p>
                     </div>
-                    <div class="col-md-7 text-right enlaces-foot">
+                    <div class="col-md-8 text-right enlaces-foot">
                         <a href="#" class='link-footer'>Políticas de Privacidad</a>
                         <span class='white'>|</span>
                         <a href="#" class='link-footer'>Términos y condiciones</a>
