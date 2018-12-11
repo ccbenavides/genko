@@ -12,27 +12,38 @@
     <link rel="stylesheet" href="./rewrite.css">
     <link rel="stylesheet" href="./animate.min.css">
 </head>
-<body>
-    <section style="background: red;color:#fff;padding: 10px 0 5px 0;" class='master_full'>
-        <h6 class='text-center'>Revisa las imagenes que faltan y dime los detalles para verlo en la noche</h6>
-    </section>
+<body id='body'>
     <!-- CABEZERA -->
-    <section class='master_full'>
+    <section class='dark-bg' id='darkBg' onclick='handleClear()'></section> 
+    <section class='master_full_top' >
         <section class='master_max'>
-            <header class='header d-flex flex-wrap align-items-end'>
+            <header class='header d-flex flex-wrap align-items-end justify-content-between'>
                 <div>
-                    <img src="./images/logo_genko_pos.png"  class='translate-logo' alt="logo">
+                    <img src="./images/logo_genko_pos.png"  class='translate-logo width-250' alt="logo">
                 </div>
                 <nav class='d-flex justify-content-between align-items-center'>
-                    <ul class='nav nav-pills main-menu align-items-center'>
-                        <li><a class='main-menu__item main-menu__active'href="#">INICIO</a></li>
-                        <li><a class='main-menu__item'href="#">NOSOTROS</a></li>
-                        <li><a class='main-menu__item'href="#">APLICACIONES</a></li>
-                        <li><a class='main-menu__item'href="#">SERVICIOS</a></li>
+                    <ul class='nav nav-pills main-menu align-items-center' id='mainMenu'>
+                        <li class='close-menu' onclick='handleClear()'>
+                            <div>
+                                <svg id="i-close" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path d="M2 30 L30 2 M30 30 L2 2"></path>
+                                </svg>
+                                <span class='close-menu-title'>MENU</span>
+                            </div>
+                        </li>
+                        <li><a class='main-menu__item main-menu__active' href="./index.html">INICIO</a></li>
+                        <li><a class='main-menu__item' href="#">NOSOTROS</a></li>
+                        <li><a class='main-menu__item' href="#">APLICACIONES</a></li>
+                        <li><a class='main-menu__item' href="#">SERVICIOS</a></li>
                         <li><a class='main-menu__item' href="./contacto.html">CONTÁCTENOS</a></li>
                         <li><a href="#" class='btn btn-demo ml-2'>DEMO</a></li>
                     </ul>
                     <div>
+                        <div class='hamburger' id='hamburger' onclick='handleMenu(event)'>
+                            <svg id="i-menu" viewBox="0 0 32 32" width="30px" height="30px" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path>
+                            </svg>
+                        </div>
                     </div>
                     <div>                  
                             <div data-icon="ei-search"></div>
@@ -42,6 +53,7 @@
 
         </section>
     </section>
+
 
     <section class='master_full'>
         <section class='banner-container'>
@@ -61,9 +73,9 @@
         </section>
     </section>
 
-    <section class='master_full'>
+    <section class='master_full bg-white'>
         <section class='master_max'>
-            <section class='padding-space px-5'>
+            <section class='padding-space'>
                 <h1 class='text-center pb-5 mb-3 title-roboto'>En Genko Pos lo que nos apaciona hacer</h1>
                 <section class='auto max-900'>
                     <div class="row text-center">
@@ -97,7 +109,9 @@
                     </div>
                 </section>
                 <div class='text-center pt-5  animated fadeInUpBig slow' > 
-                    <img src="./images/nos_apaciona.png" style="box-shadow: 1px 10px 42px #a5a2a2;border-radius: 10px;" class='img-responsive' alt="">
+                    <img src="./images/nos_apaciona.png" 
+                        style="box-shadow: 1px 10px 42px #a5a2a2;border-radius: 10px;" 
+                        class='img-responsive img-800' alt="">
                 </div>
             </section>
         </section>
@@ -109,14 +123,14 @@
         <img src="./images/home_bg_features.png"  class='absolute-height' alt="features">
         <section class='master_max'>
             <section class='padding-space'>
-                <div class='text-center'>
+                <div class='text-center relative'>
                     <h1 class="title-roboto">Características Especiales</h1>
                     <p>UNA NECESIDAD, UNA APLICACIÓN. LA INTEGRACIÓN NUNCA FUE TAN SENCILLA</p>
                 </div>
                 <section class='padding-space-50'>
 
-                    <div class="row">
-                        <div class="col-md-4 pb-5">
+                    <div class="row center-767">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_punto_venta.png" class="animated fadeIn delay-1s" alt="feature_1">
@@ -129,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_crm.png" class="animated fadeIn delay-1s" alt="feature_1">
@@ -142,7 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_iconofacturacion.png" class="animated fadeIn delay-1s" alt="feature_1">
@@ -155,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_conta.png" class="animated fadeIn delay-2s" alt="feature_1">
@@ -168,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_inventario.png" class="animated fadeIn delay-2s" alt="feature_1">
@@ -181,7 +195,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_compras.png" class="animated fadeIn delay-2s" alt="feature_1">
@@ -194,7 +208,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_fabricacion.png" class="animated fadeIn delay-3s" alt="feature_1">
@@ -207,7 +221,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_rrhh.png" class="animated fadeIn delay-3s" alt="feature_1">
@@ -220,7 +234,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 pb-5">
+                        <div class="col-md-4 col-sm-6 pb-5">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="./images/home_icono_marketing.png" class="animated fadeIn delay-3s" alt="feature_1">
@@ -243,7 +257,7 @@
     </section>
     
     <!-- NUESTRAS APLICACIONES -->
-    <section class='master_full'>
+    <section class='master_full bg-white'>
             <section class='master_max padding-space'>
                 <div class="text-center">
                     <h1 class="title-roboto">Nuestras Aplicaciones</h1>
@@ -262,7 +276,7 @@
                             Herramientas de productividad
                         </a>
                     </div>
-                    <img src="./images/nuestras_aplicaciones.png" style="box-shadow: 1px 10px 42px #a5a2a2;border-radius: 10px;" class='img-responsive animated bounceInUp slow' alt="">
+                    <img src="./images/nuestras_aplicaciones.png" style="box-shadow: 1px 10px 42px #a5a2a2;border-radius: 10px;" class='img-responsive animated bounceInUp slow img-950' alt="">
                 </div>
 
             </section>
@@ -280,11 +294,11 @@
 
     <!-- ¿Por qué elegir Genko POS? -->
     <section class="master_full bg-gray">
-        <img src="./images/home_bg_acordion.png"   class='absolute' alt="">
+        <img src="./images/home_bg_acordion.png"   class='absolute right-32' alt="">
         <section class="master_max">
-            <div class='padding-space-50 d-flex justify-content-between'>
+            <div class='padding-space-50 d-flex justify-content-between justify-530'>
                 <div></div>
-                <div>
+                <div class="relative">
                     <h4 class='pb-3 otra-letra'>¿Por qué elegir Genko POS?</h4>
                     <input type="radio" name="acordeon" id="acordeon_1" class="acordeon-input" checked />
                     <div class="acordeon acordeon-active" >
@@ -326,20 +340,20 @@
     </section>
 
     <!-- NUESTROS CLIENTES FELICES -->
-    <section class='master_full'>
+    <section class='master_full bg-white'>
         <section class='master_max'>
             <section class='padding-space'>
                 <div class='text-center mb-5'>
                     <h1 class='title-roboto color-azul'>Nuestros Clientes Felices</h1>
                     <p class='letter'>LOS CLIENTES SON NUESTRA PRIORIDAD Y ELLO QUEDA DEMOSTRADO EN LA ACTITUD DE SERVICIO Y COMPROMISO</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-2"><img src="./images/home_11.png"  class='img-responsive animated fadeInLeft' alt=""></div>
-                    <div class="col-md-2"><img src="./images/home_12.png"  class='img-responsive animated fadeInLeft delay-1s' alt=""></div>
-                    <div class="col-md-2"><img src="./images/home_13.png"  class='img-responsive animated fadeInLeft delay-2s' alt=""></div>
-                    <div class="col-md-2"><img src="./images/home_14.png"  class='img-responsive animated fadeInLeft delay-3s' alt=""></div>
-                    <div class="col-md-2"><img src="./images/home_15.png"  class='img-responsive animated fadeInLeft delay-4s' alt=""></div>
-                    <div class="col-md-2"><img src="./images/home_08.png"  class='img-responsive animated fadeInLeft delay-5s'  alt=""></div> 
+                <div class="imagenes-footer">
+                    <div><img src="./images/home_11.png"  class='img-responsive animated fadeInLeft' alt=""></div>
+                    <div><img src="./images/home_12.png"  class='img-responsive animated fadeInLeft delay-1s' alt=""></div>
+                    <div><img src="./images/home_13.png"  class='img-responsive animated fadeInLeft delay-2s' alt=""></div>
+                    <div><img src="./images/home_14.png"  class='img-responsive animated fadeInLeft delay-3s' alt=""></div>
+                    <div><img src="./images/home_15.png"  class='img-responsive animated fadeInLeft delay-4s' alt=""></div>
+                    <!-- <div><img src="./images/home_08.png"  class='img-responsive animated fadeInLeft delay-5s'  alt=""></div> -->
                 </div>
             </section>            
         </section>
@@ -349,8 +363,8 @@
     <section class='master_full padding-space-50 footer-banner'>
         <section class='master_max'>
             <div class="row">
-                <div class="col-md-4">
-                    <img src="./images/Logo_genko_pos_footer.png"  class='img-responsive translate-y' alt="">
+                <div class="col-lg-4">
+                    <img src="./images/Logo_genko_pos_footer.png"  class='img-responsive translate-y logo-responsive' alt="">
                     <p class='white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                     <div class='icon-footer'><i class="fa fa-facebook" aria-hidden="true"></i></div>
                     <div class='icon-footer'><i class="fa fa-twitter" aria-hidden="true"></i></div>
@@ -358,8 +372,8 @@
                     <div class='icon-footer'><i class="fa fa-vimeo" aria-hidden="true"></i></div>
                     <div class='icon-footer'><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>  
-                <div class="col-md-4">
-                    <h4 class='pb-4 font-weight-normal'>Información de contacto</h4>
+                <div class="col-lg-4">
+                    <h4 class='pb-4 font-weight-normal title-info-lg'style="font-size:larger;">Información de contacto</h4>
                     <p>
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <b class='pl-3'>Dirección: </b>
@@ -376,9 +390,9 @@
                         <span class="white">elearny@mybussines.com</span>
                     </p>
                 </div>
-                <div class="col-md-4">
-                    <h4 class='pb-4 font-weight-normal'>Boletín de Noticias</h4>
-                    <form action="#">
+                <div class="col-lg-4">
+                    <h4 class='pb-4 font-weight-normal title-info-lg' style="font-size:larger;">Boletín de Noticias</h4>
+                    <form action="#" class='max-width-lg'>
                         <div class="form-group">
                             <input type="text"  placeholder="Nombres" class='form-control form-control-footer'  name='nombres' />
                         </div>
@@ -394,12 +408,12 @@
     <section class='master_full bg-purple footer'>
         <section class="master_max">
             <div class="row">
-                <div class="col-md-5">
-                    <p class='white'>
+                <div class="col-md-4">
+                    <p class='white rights-foot'>
                         Copyright 2018 - Genko Pos. Todos los derechos reservados
                     </p>
                 </div>
-                <div class="col-md-7 text-right enlaces-foot">
+                <div class="col-md-8 text-right enlaces-foot">
                     <a href="#" class='link-footer'>Políticas de Privacidad</a>
                     <span class='white'>|</span>
                     <a href="#" class='link-footer'>Términos y condiciones</a>
@@ -411,5 +425,6 @@
     </section>
 
 <script src="./fontawesome.min.js"></script>
+<script src='./rewrite.js'></script>
 </body> 
 </html> 
